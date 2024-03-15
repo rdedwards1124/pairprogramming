@@ -76,7 +76,7 @@ const nums = [4, 1, 3];
 const multi = function (a, b) {
     return a * b;
 };
-console.log(reduce(nums, multi, 1)); //-> 8
+console.log(reduce(nums, multi, 1)); //-> 12
 
 
 
