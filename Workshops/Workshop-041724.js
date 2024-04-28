@@ -2,11 +2,16 @@
 const synonyms = ['fantastic', 'wonderful', 'great']
 const greetings = []
 
-// 1.Intialing counter variable, 2.Setting conditional, 3.Running instructional, 4.Increment the counter
+/*----- For Loop Steps -----*/
+// 1.Intialing counter variable, 
+// 2.Setting conditional, 
+// 3.Running instructional, 
+// 4.Increment the counter.
+
 // Template literal: ${ }
+
 for(let i = 0; i < synonyms.length; i++){
     // Push each syn into greeting
-
 }
 
 /////////////////////////////////////////////////////
