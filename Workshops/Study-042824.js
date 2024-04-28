@@ -14,12 +14,13 @@ function amplify(number){
         if(a%4 === 0){
           a=a*10
         }
+        // Push value of a to the array
       	array.push(a)
     }
     return array
 }
 
-let answer = amplify(15)
+let answer = amplify(10)
 console.log(answer)
 
 // SOLUTION:
@@ -54,10 +55,11 @@ For example, if the input is 4 then your function should return 10 because 1 + 2
 */
 
 function addNumbers(number){
-    //create a variable for the sum, this will be the eventual result
+    //create a variable for the sum, this will eventually be the result
     let sum = 0
     // make a forloop and loop it "number" times
     for(let i=1; i<=number; i++){
+        // everytime you loop add that to sum
         sum = sum + i
     }
     return sum
@@ -91,3 +93,82 @@ Example:
 Adding 'dog' to an empty List --> List { 0: 'dog', length: 1 } --> return 1
 Adding 'cat' to the same List --> List { 0: 'dog', 1: 'cat', length: 2 } --> return 2
 */
+
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+
+/* 
+Declare a function 'record', which takes a callback function as an argument and returns another function.
+The returned function takes in a number, and when invoked, will run the callback on this number. The function should keep a record of all previous results of running the callback (and if it is invoked more than once with the same argument, it should not run the callback again on that argument). 
+On each invocation, it should return the *highest value so far* among all previous calls. Once complete, make sure to test your function.
+
+Example:
+const multiplyBy2 = record((n) => n * 2);
+multiplyBy2(2) // --> 4;
+multiplyBy2(10) // --> 20;
+multiplyBy2(5) // --> 20;
+multiplyBy2(15) // --> 30; 
+*/
+
+
+// SOLUTION:
+/*
+function record(cb) {
+  //input to inner func: num output: invocation of cb on num
+  //declare an empty obj to store results
+  const result = {};
+  let max = -Infinity;
+  return function(num) {
+    // if this is the first time I see this number
+      if (result[num] === undefined) { // hasOwnProperty || in operator
+        result[num] = cb(num);
+        if (result[num] > max) max = result[num];
+      } 
+     return max;
+  }
+  
+  
+  //do not run cb on same num more than once
+  //return the highest valuem
+}
+
+const multiplyBy2 = record((n) => n * 2);
+
+console.log(multiplyBy2(2)) // --> 4;
+console.log(multiplyBy2(10)) // --> 20;
+console.log(multiplyBy2(5)) // --> 20;
+console.log(multiplyBy2(15)) // --> 30; 
+*/
+
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+
+
+/* 
+Declare a recursive function 'findIndex', which takes in at least two arguments (an array and a value).
+'findIndex' should search the array for the passed-in value. If found, it should return the first index number at which the value appears. If not, it should return -1.
+
+Example: findIndex([1, 2, 3, 4, 5, 3], 3) --> 2
+
+*/
+
+// create the findIndex function with 2 parameters
+function findIndex(array, value){
+    // this should loop thru the array and find a number that equals "value"
+    for(let i=0; i<array.length; i++){
+        // for each loop compare the number in current index to "value"
+        if(array[i] === value){
+            let a = array[i]
+        } else {
+            let a = -1
+        }
+    }
+    // then return the index number of that array where u found "value"
+    return a
+}
+
+let b = findIndex([1,2,3,4,5], 3)
+console.log(b)
+
